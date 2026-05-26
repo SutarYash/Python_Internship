@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            text-align: center;
+            background-color: rgb(255, 255, 82);
+        }
+
+        .box{
+            margin-top: 100px;
+        }
+
+        a{
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="box">
+        <h1>Welcome {{ name }}</h1>
+        <h2>Login Successful</h2>
+
+        <br>
+
+        <a href="/logout">Logout</a>
+    </div>
+
+</body>
+</html>
