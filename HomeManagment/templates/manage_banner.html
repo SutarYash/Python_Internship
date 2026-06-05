@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Banner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Manage Banner</h1>
+</header>
+
+<div class="container">
+
+<section>
+
+<form method="POST">
+
+    <input type="text"
+           name="image_url"
+           placeholder="Banner Image URL"
+           required>
+
+    <br><br>
+
+    <input type="text"
+           name="title"
+           placeholder="Banner Title"
+           required>
+
+    <br><br>
+
+    <textarea
+        name="description"
+        placeholder="Banner Description"
+        required>
+    </textarea>
+
+    <br><br>
+
+    <button type="submit">
+        Save Banner
+    </button>
+
+</form>
+
+</section>
+
+<section>
+
+<h2>All Banners</h2>
+
+{% for banner in banners %}
+
+<div class="card">
+
+    <img src="{{ banner[1] }}" width="300">
+
+    <h3>{{ banner[2] }}</h3>
+
+    
+
+    <p>{{ banner[3] }}</p>
+    <a href="/delete-banner/{{ banner[0] }}">
+    <button>Delete</button>
+    </a>
+
+</div>
+
+{% endfor %}
+
+</section>
+
+<a href="/dashboard">
+    <button>Back to Dashboard</button>
+</a>
+
+</div>
+
+</body>
+</html>

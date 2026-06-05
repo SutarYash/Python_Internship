@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav>
+
+    <div class="logo">
+        Admin Panel
+    </div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+</nav>
+
+<div class="container">
+
+    <div class="dashboard-box">
+
+        <h1>Admin Dashboard</h1>
+
+        <p>
+            Welcome {{ name }}
+        </p>
+
+        <br><br>
+
+        <h2>Homepage Management</h2>
+
+        <div class="dashboard-buttons">
+
+        <a href="/manage-banner">
+        <button>Manage Banner</button>
+        </a>
+
+        <a href="/manage-vision">
+        <button>Vision & Mission</button>
+        </a>
+
+        <a href="/manage-statistics">
+        <button>Statistics</button>
+        </a>
+
+        <a href="/manage-initiatives">
+        <button>Initiatives</button>
+        </a>
+
+        <a href="/logout">
+        <button>Logout</button>
+        </a>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
