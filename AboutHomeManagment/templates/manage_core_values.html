@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Core Values</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container{
+            width: 80%;
+            margin: auto;
+            padding: 30px;
+        }
+
+        .card{
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        input{
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button{
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .delete-btn{
+            background: red;
+        }
+
+        .back-btn{
+            background: #333;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <a href="/dashboard">
+        <button class="back-btn">
+            ⬅ Back to Dashboard
+        </button>
+    </a>
+
+    <h1>Manage Core Values</h1>
+
+    <div class="card">
+
+        <form action="/add_core_value" method="POST">
+
+            <input type="text"
+                   name="value"
+                   placeholder="Enter Core Value"
+                   required>
+
+            <br><br>
+
+            <button type="submit">
+                Add Value
+            </button>
+
+        </form>
+
+    </div>
+
+    {% for value in values %}
+
+    <div class="card">
+
+        <h3>{{ value[1] }}</h3>
+
+        <a href="/delete_core_value/{{ value[0] }}">
+            <button class="delete-btn">
+                Delete
+            </button>
+        </a>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+</body>
+</html>
